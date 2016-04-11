@@ -1,0 +1,33 @@
+// c++ code
+
+#include<iostream>
+#include<cmath>
+#include<cstring>
+
+using namespace std;
+
+int main() {
+ 
+ int i,j;
+ int t;
+ cin >> t;
+ while(t--) {
+  int flag = 0;
+  char str[10000];
+  cin >> str;
+  int n = strlen(str);
+  for(i=1;i<=n-1;i++) {
+   j = n-i;
+   if(abs(str[i] - str[i-1]) != abs(str[j-1] - str[j])){
+    cout << "Not Funny" << endl;
+    flag = 1;    
+    break;
+   }
+  }
+  if(flag == 0)
+   cout << "Funny" << endl;
+ }
+return 0;
+}
+
+
