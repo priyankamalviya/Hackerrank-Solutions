@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input=new Scanner(System.in);
+        int t=input.nextInt();
+        input.nextLine();
+        for(int n=0;n<t;n++){
+            String s=input.nextLine();
+            if((s.length()%2)==0){
+                int l=s.length(),count=0;
+                int letters[]=new int[26];
+                for(int i=0;i<(l/2);i++){
+                    letters[s.charAt(i)-'a']++;
+                }
+                for(int j=(l/2);j<l;j++){
+                    if((letters[s.charAt(j)-'a'])>0){
+                        letters[s.charAt(j)-'a']--;
+                    }
+                }
+                for(int k=0;k<letters.length;k++){
+                    count=count+letters[k];
+                }
+                System.out.println(count);
+            }
+            else{
+                System.out.println("-1");
+            }
+        }
+    }
+}
