@@ -14,19 +14,17 @@ class Solution{
             //put values into the phonebook
             phoneBook.put(name,phone);
         }
-        for ( String key : phoneBook.keySet() ) {
-        //System.out.println( key );
         while(in.hasNext()){
             String s = in.next();
             // Write code here
-           if(!key.equals(s)){
+           if(!phoneBook.containsKey(s)){
                 System.out.println("Not found");
             }
-            else
-                System.out.println(key+"="+phoneBook.get(s));
+            else if(phoneBook.containsKey(s))
+                System.out.println(s+"="+phoneBook.get(s));
         }
-       }
         in.close();
     }
 }
+    
 
