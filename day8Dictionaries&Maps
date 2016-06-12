@@ -1,0 +1,32 @@
+//Complete this code or write your own from scratch
+import java.util.*;
+import java.io.*;
+
+class Solution{
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+          Map<String,Integer> phoneBook =new HashMap<String,Integer>();
+        for(int i = 0; i < n; i++){
+            String name = in.next();
+            int phone = in.nextInt();
+            // Write code here
+            //put values into the phonebook
+            phoneBook.put(name,phone);
+        }
+        for ( String key : phoneBook.keySet() ) {
+        //System.out.println( key );
+        while(in.hasNext()){
+            String s = in.next();
+            // Write code here
+           if(!key.equals(s)){
+                System.out.println("Not found");
+            }
+            else
+                System.out.println(key+"="+phoneBook.get(s));
+        }
+       }
+        in.close();
+    }
+}
+
