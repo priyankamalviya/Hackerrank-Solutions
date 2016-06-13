@@ -39,9 +39,9 @@ class Student extends Person{
             return 'E';
         else if(avg>=70 && avg<=80) 
             return 'A';
-        else if(avg>=60 && avg<=70)
+        else if(avg>=55 && avg<=70)
             return 'P';
-        else if(avg>=50 && avg<=60)
+        else if(avg>=40 && avg<=55)
             return 'D';
         else
             return 'T';
