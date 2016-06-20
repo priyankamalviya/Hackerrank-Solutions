@@ -7,7 +7,7 @@ interface AdvancedArithmetic{
 //Write your code here
 class Calculator implements AdvancedArithmetic{
     public int divisorSum(int n){
-        int sum=0, base=1;
+        int sum=0;
         for(int i=1;i<=n;i++){
             int val=n%i;
                 if(val==0){
