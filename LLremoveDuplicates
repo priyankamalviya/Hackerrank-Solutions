@@ -1,0 +1,19 @@
+/*
+Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+
+Node RemoveDuplicates(Node head) {
+  // This is a "method-only" submission. 
+  // You only need to complete this method. 
+    if ( head == null ) return null;
+  Node nextItem = head.next;
+  while ( nextItem != null && head.data == nextItem.data ) {
+    nextItem = nextItem.next;
+  }
+  head.next = RemoveDuplicates( nextItem );
+  return head;
+}
