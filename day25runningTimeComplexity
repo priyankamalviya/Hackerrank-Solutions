@@ -10,22 +10,21 @@ public class Solution {
         /* Enter your code here. */
         Scanner input=new Scanner(System.in);
         int t=input.nextInt();
-        
         for(int i=0;i<t;i++){
-            boolean flag=true;
-            int n=input.nextInt();
-            if(n==1)
+        int n=input.nextInt();
+        int count=0;
+        if(n==1)
             System.out.println("Not prime");
-            for(int j=2;j*j<=n;j++){
-                if( n%j==0)
-                    flag=false;   
-            }
-            if(flag)
-                System.out.println("Prime");
-            
-            else
-                System.out.println("Not Prime");
+        else{
+        for(int j=2;j*j<=n;j++){
+            if(n%j==0)
+              count++;
         }
+        if(count==0)
+            System.out.println("Prime");
+        else
+            System.out.println("Not prime");
+       }
+       }
     }
 }
-
