@@ -1,0 +1,52 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public char getCounter(char c){
+    if(c==')')
+        return('(');
+    else if(c=='}')
+        return('{');
+    if(c==']')
+        return('[');
+   return ' ';  
+}
+
+public boolean isBalanced(String s){
+    Stack<Character> st = new Stack<Character>();
+    for(char c:s.toCharArray()){
+        if(c == '[' || c=='{' || c=='(')
+            st.push(c);       
+        else if(c==')' || c=='}' ||c==']'){
+            if(st.size()>0 && (Character)st.peek()== getCounter(c))
+                st.pop();      
+            else
+                return false;
+        }
+    }
+
+    if(st.size()>1)
+        return false;
+    else
+        return true;
+}
+    
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        
+        for(int a0 = 0; a0 < t; a0++){
+            String s = in.next();
+            Solution sl = new Solution();
+             boolean check = sl.isBalanced(s);
+            if(check)
+            System.out.println("YES");
+            else
+            System.out.println("NO");
+        }
+    }
+}
+
