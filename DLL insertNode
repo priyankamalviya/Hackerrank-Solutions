@@ -1,0 +1,52 @@
+/*
+  Insert Node at the end of a linked list 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+     Node prev;
+  }
+*/
+
+Node SortedInsert(Node head,int data) {
+     Node current=head;
+     Node insertNode =new Node();
+     insertNode.data=data;
+     insertNode.next=null;
+     insertNode.prev=null;   
+     
+    //add a node if doubly linked list is empty
+    if(head==null){
+        head=insertNode;
+        //System.out.println(head.data);
+        return head;
+    }
+       else{
+           //add to the start of linked list
+           
+           if(current.data>=data){
+               current.prev=insertNode;
+               insertNode.next=current;
+               head=insertNode;
+               return head;
+           }
+           
+       while(current.next!=null && current.next.data<=data ){
+            current=current.next;
+        }
+           //add to the end of linked list
+           if(current.next==null){
+               current.next=insertNode;
+               insertNode.prev=current;
+               insertNode.next=null;
+               return head;
+           }
+           insertNode.next=current.next;
+           current.next.prev=insertNode;
+           current.next=insertNode;
+           insertNode.prev=current;
+           //System.out.println(current.data); 
+           return head;
+        }
+}
