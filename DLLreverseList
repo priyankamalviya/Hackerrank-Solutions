@@ -1,0 +1,22 @@
+Node Reverse(Node head) {
+    if(head==null){
+        return null;
+    }
+    Stack st=new Stack();
+    Node temp=head;
+    while(temp!=null){
+        st.push(temp);
+        temp=temp.next;
+    }
+    temp=(Node)st.peek();
+    head=temp;
+    st.pop();
+    while(!st.isEmpty()){
+        temp.next=(Node)st.peek();
+        st.pop();
+        temp=temp.next;
+    }
+    temp.next=null;
+return head;
+}
+
