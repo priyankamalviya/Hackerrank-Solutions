@@ -1,0 +1,38 @@
+int FindMergeNode(Node headA, Node headB) {
+    int lenA=0;
+    int lenB=0;
+    Node currentA=headA;
+    Node currentB=headB; 
+    while(currentA!=null){
+       lenA++;
+       currentA=currentA.next;
+    }
+    
+    while(currentB!=null){
+       lenB++;
+       currentB=currentB.next;
+    }
+    int result=0;
+    currentA=headA;
+    currentB=headB;
+    // check if headB is longer, if not swap headA to headB & reach uptill the diff point in list
+    if(lenB>lenA){
+    while(lenB>lenA && currentB!=null ){   
+        currentB=currentB.next;
+        lenB--;
+          }
+    }
+    else
+        {
+     while(lenA>lenB && currentA!=null ){
+       currentA=currentA.next;
+        lenA--;
+        } 
+    }   
+    while(currentA !=null && currentB!=null &&  currentA!=currentB){
+      currentA = currentA.next;
+      currentB = currentB.next;
+    }  
+  return  currentA.data;   
+}
+
