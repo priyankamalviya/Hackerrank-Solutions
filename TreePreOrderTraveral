@@ -1,0 +1,26 @@
+/* you only have to complete the function given below.  
+Node is defined as  
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+
+*/
+
+void preOrder(Node root) {
+    if(root==null)
+    System.out.print("null");
+    Stack st=new Stack();
+    st.push(root);
+    while(!st.isEmpty()){
+        Node temp=(Node)st.peek();
+        System.out.print(temp.data+" ");
+        st.pop();
+        if(temp.right!=null)
+            st.push(temp.right);
+        if(temp.left!=null)
+            st.push(temp.left);
+    }
+}
