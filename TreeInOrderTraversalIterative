@@ -1,0 +1,33 @@
+/* you only have to complete the function given below.  
+Node is defined as  
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+
+*/
+void inOrder(Node root) {
+    Stack st=new Stack();
+    Node current=root;
+    boolean done=false;
+    while(!done){
+        if(current!=null){
+            st.push(current);
+            current=current.left;
+        }
+        else{
+            if(st.isEmpty())
+                done=true;
+            else{
+                current=(Node)st.peek();
+                st.pop();
+                System.out.print(current.data+" ");
+                current=current.right;
+            }
+        }
+    }
+    
+}
+
