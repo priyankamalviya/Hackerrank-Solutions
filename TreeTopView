@@ -1,0 +1,28 @@
+/*
+   class Node 
+       int data;
+       Node left;
+       Node right;
+*/
+void top_view(Node root)
+{
+    Stack st=new Stack();
+    Node current=root;
+    while(current!=null){
+        st.push(current);
+        current=current.left;
+    }
+    while(!st.isEmpty()){
+        Node temp=(Node)st.peek();
+        System.out.print(temp.data+" ");
+        st.pop();
+    }
+    current=root.right;
+    while(current!=null){
+        st.push(current);
+        Node temp=(Node)st.peek();
+        System.out.print(temp.data+" ");
+        st.pop();
+        current=current.right;
+    }
+}
