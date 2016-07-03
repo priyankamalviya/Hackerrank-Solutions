@@ -1,0 +1,31 @@
+/* you only have to complete the function given below.  
+Node is defined as  
+
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+
+*/
+void postOrder(Node root) {
+    Stack st=new Stack();
+    Stack output= new Stack();
+  
+    st.push(root);
+    while(!st.isEmpty()){
+        Node current=(Node)st.peek();
+        output.push(current);
+        st.pop();
+        if(current.left!=null)
+            st.push(current.left);
+        
+        if(current.right!=null)
+            st.push(current.right); 
+    }
+    while(!output.isEmpty()){
+        Node temp=(Node)output.peek();
+        System.out.print(temp.data+" ");
+        output.pop();
+    }
+}
