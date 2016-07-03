@@ -1,0 +1,17 @@
+   /*
+    
+    class Node 
+       int data;
+       Node left;
+       Node right;
+   */
+   int height(Node root)
+    {
+        if (root!=null){
+         int heightLeft=height(root.left);
+         int heightRight=height(root.right);
+          return (heightLeft > heightRight ? heightLeft :heightRight) + 1;
+        }  
+        else
+            return -1;
+    }
