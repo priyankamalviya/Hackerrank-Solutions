@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input=new Scanner(System.in);
+        int count=input.nextInt();
+        while(count>0){
+        int a=input.nextInt();
+        int b=input.nextInt();
+        int n=input.nextInt();
+            double sum=0;
+            sum=sum+a;
+            for(int j=0;j<n;j++){ 
+                sum=sum+(double)(Math.pow(2,j))*b;
+                System.out.print((int)sum+" ");
+            }
+            System.out.println();
+            count--;
+        }
+    }
+}
