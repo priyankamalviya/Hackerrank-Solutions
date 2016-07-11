@@ -1,0 +1,12 @@
+read a
+read b
+     if [ $a -le 100 -a $b -le 100 -a $a -ge -100 -a $b -ge -100 ]; then
+     sum=$((a+b))
+     sub=$((a-b))
+     div=$((a/b))
+     mul=$((a*b))
+        echo $sum
+        echo $sub
+        echo $mul
+        echo $div  
+fi
