@@ -1,0 +1,5 @@
+#!/bin/python3
+
+import sys
+N = int(input().strip())
+print("Weird" if N%2==1 or (N%2==0 and N in range(6,21)) else "Not Weird")
