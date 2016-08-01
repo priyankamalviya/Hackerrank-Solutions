@@ -1,0 +1,4 @@
+#!/bin/python3
+
+import sys
+print(len([i for i in input() if i.isupper()])+1)
