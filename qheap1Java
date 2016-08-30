@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        Scanner input = new Scanner(System.in);
+        int Q = input.nextInt();
+        for (int i = 0; i < Q; i++) {
+            int in = input.nextInt();
+            if (in != 3) {
+                int num = input.nextInt();
+                if (in == 1) queue.add(num);
+                else queue.remove(num);
+            } else {
+                System.out.println(queue.peek());
+            }
+        }
+    }
+}
