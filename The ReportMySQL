@@ -1,0 +1,11 @@
+select 
+   if(G.Grade < 8, concat('NULL'),S.Name), 
+   G.GRADE, 
+   S.MARKS 
+   from STUDENTS S
+   INNER JOIN GRADES G
+   on S.MARKS >= G.MIN_MARK 
+   and S.MARKS <= G.MAX_MARK 
+   group by 
+   G.GRADE desc, 
+   S.NAME, S.MARKS asc
