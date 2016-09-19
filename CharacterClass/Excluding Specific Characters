@@ -1,1 +1,2 @@
 Regex_Pattern = '^[^0-9][^aeiou][^bcDF][^\\r,\\n,\\t,\\f\\s][^AEIOU][^.,]$'
+print !!(gets =~ /#{Regex_Pattern}/)
