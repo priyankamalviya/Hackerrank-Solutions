@@ -1,0 +1,2 @@
+Regex_Pattern = '^[0-9]{1,2}[a-zA-Z]{3,}[\\.]{0,3}$'
+print !!(gets =~ /#{Regex_Pattern}/)
