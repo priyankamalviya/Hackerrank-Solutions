@@ -1,0 +1,3 @@
+select n, case when p is 'NUll' then 'root' 
+case when n in (select p.B1 from BST b1 join BS b2 where p.B1 = n.B2) 
+then 'Inner' else 'Leaf' end as node from BST order by n;
