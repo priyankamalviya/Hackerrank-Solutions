@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+        int K = scanner.nextInt();
+        Map<Integer, Integer> map = new HashMap<>();
+        int count = 0;
+        for (int i = 0; i < N; i++) {
+            int num = scanner.nextInt();
+            if (map.containsKey(num)) {
+                count += map.get(num);
+            }
+            if (map.containsKey(num + K)) {
+                map.put(num + K, map.get(num + K) + 1);
+            } else {
+                map.put(num + K, 1);
+            }
+            if (map.containsKey(num - K)) {
+                map.put(num - K, map.get(num - K) + 1);
+            } else {
+                map.put(num - K, 1);
+            }
+        }
+        System.out.println(count);
+    }
+}
