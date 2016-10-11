@@ -1,0 +1,27 @@
+import java.util.*;
+
+
+public class Solution {
+    public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    final int n = in.nextInt();
+    final Deque<Character> bracketsStack = new ArrayDeque<Character>();
+    for(int i = 0; i < n; i++){
+        String s = in.next();
+
+        final char[] brackets = s.toCharArray();
+        for(char c : brackets) {
+            final int ascii = c == ')' ? 1 : 2;
+
+            if(bracketsStack.peek() != null && bracketsStack.peek() == c - ascii) {
+                bracketsStack.removeFirst();
+            } else {
+                bracketsStack.addFirst(c);
+            }    
+        }
+        System.out.println(bracketsStack.size() == 0 ? "YES" : "NO");
+        bracketsStack.clear();
+    }
+}
+}
+
