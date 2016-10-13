@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+public class Solution {
+    public static int numberNeeded(String first, String second) {
+         int[] letters = new int[26];
+        first.chars().forEach((c) -> {
+            letters[c - 97]++;
+        });
+        second.chars().forEach((c) -> {
+            letters[c - 97]--;
+        });
+        return Arrays.stream(letters).map(Math::abs).sum();
+    }
+  
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String first = in.next();
+        String second = in.next();
+        System.out.println(numberNeeded(first, second));
+    }
+}
+
