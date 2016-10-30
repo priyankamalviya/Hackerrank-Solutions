@@ -1,0 +1,10 @@
+#!/bin/python3
+
+import sys
+
+a = list(map(int, input().strip().split()))
+b = list(map(int, input().strip().split()))
+
+asum = len([1 for a,b in zip(a,b) if a>b])
+bsum = len([1 for a,b in zip(a,b) if b>a])
+print (asum, bsum)
