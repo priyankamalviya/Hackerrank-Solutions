@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+n = int(input())
+
+pos1 = 0
+pos2 = n - 1
+
+sum1 = 0
+sum2 = 0
+
+for line in range(n):
+    input_string = input().split(" ")
+    sum1 = sum1 + int(input_string[pos1])
+    sum2 = sum2 + int(input_string[pos2])
+
+    pos1 += 1
+    pos2 -= 1
+
+print(abs(sum1 - sum2))
