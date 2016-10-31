@@ -9,7 +9,7 @@ pos2 = n - 1
 sum1 = 0
 sum2 = 0
 
-for line in range(n):
+for i in range(n):
     input_string = input().split(" ")
     sum1 = sum1 + int(input_string[pos1])
     sum2 = sum2 + int(input_string[pos2])
