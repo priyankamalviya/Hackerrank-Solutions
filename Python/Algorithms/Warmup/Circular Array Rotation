@@ -1,0 +1,15 @@
+#!/bin/python3
+
+import sys
+    
+listNums = [int(a) for a in input().split()]
+n = listNums[0]
+k = listNums[1]
+query = listNums[2]
+array = [int(a) for a in input().split()]
+rotatedArray = []
+for q in range(query):
+    q = int(input())
+    rotatedArray.append(array[q-k % n])
+for r in rotatedArray:
+    print(r)
