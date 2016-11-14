@@ -1,0 +1,10 @@
+#!/bin/python3
+
+import sys
+
+
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+a = [int(a_temp) for a_temp in input().strip().split(' ')]
+res = sum((i+j)%k == 0 for x, i in enumerate(a) for j in a[x+1:])
+print(res)
