@@ -1,0 +1,10 @@
+import re
+
+pattern = r'<a href="(.*?)".*?>([\w ,./]*)(?=</)'
+
+N = int(input())
+for _ in range(N):
+    html = input()
+    result = re.findall(pattern, html)
+    for link, title in result:
+        print ("{},{}".format(link, title.strip()))
