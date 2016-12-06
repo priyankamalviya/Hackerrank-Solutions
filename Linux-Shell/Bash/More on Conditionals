@@ -1,0 +1,12 @@
+x=-1
+read a ; [[ $a -gt $x ]] && x=$a
+read b ; [[ $b -gt $x ]] && x=$b
+read c ; [[ $c -gt $x ]] && x=$c
+
+if [ $(( (a+b+c)/3 )) -eq $x ] ; then
+  echo "EQUILATERAL"
+elif test $a -eq $b || test $a -eq $c || test $b -eq $c ; then
+  echo "ISOSCELES"
+else
+  echo "SCALENE"
+fi
