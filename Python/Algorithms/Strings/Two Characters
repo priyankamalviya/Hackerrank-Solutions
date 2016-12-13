@@ -1,0 +1,15 @@
+#!/bin/python3
+from itertools import combinations
+
+def two_characters(s):
+    return all(s[i-1] != s[i] for i in range(1,len(s)))
+
+s_len = int(input().strip())
+s = input().strip()
+letters = set(s)
+max_len = 0
+for pair in combinations(letters,2):
+    substr = "".join(i for i in s if i in pair)
+    if two_characters(substr):
+        max_len = max(max_len, len(substr))
+print(max_len)
