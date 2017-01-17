@@ -1,0 +1,21 @@
+/*  
+   class Node
+      public  int frequency; // the frequency of this tree
+       public  char data;
+       public  Node left, right;
+    
+*/ 
+
+void decode(String S, Node root)
+{
+    StringBuilder sb = new StringBuilder();
+    Node n = root;
+    for (int i = 0; i < S.length(); i++) {
+        n = S.charAt(i) == '1' ? n.right : n.left;
+        if (n.left == null && n.right == null) {
+            sb.append(n.data);
+            n = root;
+        }
+    }
+    System.out.print(sb);
+}
