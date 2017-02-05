@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution 
+{
+
+    public static void main(String[] args) 
+    {
+        
+        Scanner input = new Scanner( System.in );
+        
+        int n = input.nextInt( );
+        int skip = input.nextInt( );
+        
+        int Bill = 0;
+        
+        for ( int i = 0; i < n; i ++ )
+        {
+        
+            if ( i != skip )
+            {
+                
+                Bill += input.nextInt( );
+            
+            }
+            
+            else
+            {
+            
+                input.nextInt( );
+                
+            }
+                
+        }
+        
+        int charge = input.nextInt( );
+         
+        if ( charge <= Bill / 2  )
+        {
+        
+            System.out.println( "Bon Appetit" );
+            
+        }
+        
+        else 
+        {
+        
+            System.out.println( charge - ( Bill / 2 ) + "" );
+            
+        }
+        
+    }
+
+}
