@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner input = new Scanner(System.in);
+        int i = input.nextInt();
+        int j = input.nextInt();
+        int k = input.nextInt();
+        int rev=0, count =0;
+        for(int x = i ; x <=j; x++){
+             rev = Integer.parseInt(new StringBuffer(String.valueOf(x) ).reverse().toString());
+            if((Math.abs(x-rev) ) % k ==0 ){
+                count++;
+            }
+        }
+        System.out.print(count);
+    }
+}
