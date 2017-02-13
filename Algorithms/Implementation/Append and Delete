@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.next();
+        String t = in.next();
+        int k = in.nextInt();
+        int i;
+        int flag =0;
+        for(i =0; i< s.length() && i<t.length(); i++){
+            if(s.charAt(i) != t.charAt(i)){
+                break;
+            }
+        }
+        int temp1 = s.length() - i;
+        int temp2 =t.length() -i;
+        int val = k-temp1 -temp2;
+        if(val==0){
+            System.out.println("Yes");
+        }
+        else if(val<0){
+            System.out.println("No");
+        }
+        else{
+            if(val%2 ==0){
+                System.out.println("Yes");
+            }
+            else{
+                if(val> 2*i){
+                    System.out.println("Yes");
+                }
+                else{
+                    System.out.println("No");
+                }
+            }
+        }
+        
+    }
+}
