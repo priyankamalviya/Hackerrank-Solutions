@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+import java.math.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int t = scan.nextInt();
+        while(t > 0)
+            {
+            int A = scan.nextInt();
+            int B = scan.nextInt();
+            System.out.println((int) Math.floor(Math.sqrt(B)) - (int) Math.ceil(Math.sqrt(A)) + 1);
+            t--;
+        }
+    }
+}
