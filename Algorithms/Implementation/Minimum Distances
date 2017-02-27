@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        Map<Integer, Integer> hashmap = new HashMap<>();
+        int minDist= Integer.MAX_VALUE;
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int i=0; i < n; i++){
+            arr[i] = in.nextInt();
+            if(hashmap.containsKey(arr[i])) {
+                int x=hashmap.get(arr[i]);
+                int dist = i - x;
+                if(dist < minDist) minDist = dist;
+            }
+            else hashmap.put(arr[i],i);            
+        }
+        if(minDist == Integer.MAX_VALUE) minDist=-1;
+        System.out.println(minDist);
+    }
+}
+
