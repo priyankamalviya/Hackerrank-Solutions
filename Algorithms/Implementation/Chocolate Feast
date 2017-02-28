@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int a0 = 0; a0 < t; a0++){
+            int n = in.nextInt();
+            int c = in.nextInt();
+            int m = in.nextInt();
+            
+            //implementation 
+            int finalChocolates = n/c;
+            int wrappersUsed = finalChocolates;
+            int extraChocolates = 0;
+            while(m <= wrappersUsed){
+                int wrappersConverted=wrappersUsed-(wrappersUsed%m) ;
+
+                extraChocolates = wrappersUsed / m;
+
+                wrappersUsed = (wrappersUsed - wrappersConverted) + extraChocolates;
+
+                finalChocolates = finalChocolates + extraChocolates;
+            }
+            System.out.println(finalChocolates);
+        }
+        
+    }
+}
+
