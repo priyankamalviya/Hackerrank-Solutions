@@ -1,0 +1,23 @@
+function processData(input) {
+    //Enter your code here
+    console.log(
+  new Set(input.toLowerCase()
+    .split('\n')
+    .slice(1)
+    .map(word => word.split(''))
+    .reduce((prev, curr) => curr.filter(gemElement => prev.includes(gemElement)))
+  ).size
+);
+
+} 
+
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+_input = "";
+process.stdin.on("data", function (input) {
+    _input += input;
+});
+
+process.stdin.on("end", function () {
+   processData(_input);
+});
