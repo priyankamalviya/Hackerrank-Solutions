@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void insertionSortShiftCounter(int[] arr) {
+        int shifts = 0;
+        for (int i = 1; i < arr.length; i++) {
+            int j = i;
+            int value = arr[i];
+            while (j >= 1 && arr[j-1] > value) {
+                arr[j] = arr[j-1];
+                j--;
+                shifts++;
+            }
+            arr[j] = value;
+        }
+        System.out.println(shifts);
+    }
+    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int s = scan.nextInt();
+        int[] arr = new int[s];
+        for (int i = 0; i < s; i++) {
+            arr[i] = scan.nextInt(); 
+        }
+        insertionSortShiftCounter(arr);
+    }
+}
