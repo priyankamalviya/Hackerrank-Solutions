@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    int[] score = new int[n];
+    int min,max;
+    int minCount=0;
+    int maxCount=0;
+
+    score[0] = in.nextInt();
+
+    min=score[0];
+    max=score[0];
+
+    for(int i=1; i < n; i++)
+    {
+        score[i] = in.nextInt();
+        if(score[i]<min)
+        {
+            min=score[i];
+            minCount++;
+        }
+
+        if(score[i]>max)
+        {
+            max=score[i];
+            maxCount++;
+        }
+    }
+
+        System.out.println(maxCount+"\t"+minCount);
+    }
+}
