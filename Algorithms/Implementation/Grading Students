@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        while (n-- > 0) {
+            int grade = scan.nextInt();
+            System.out.println(roundOff(grade));
+        }
+    }
+    
+    private static int roundOff(int grade) {
+        if (grade >= 38) {
+            int gradeMod5 = grade % 5;
+            if (gradeMod5 > 2) {
+                grade += 5 - gradeMod5;
+            }
+        }
+        return grade;
+    }
+}
