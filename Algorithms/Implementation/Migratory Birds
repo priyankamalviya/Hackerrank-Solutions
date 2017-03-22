@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] types = new int[n];
+        int maxFreq = 0,freqId = 0;
+        for(int i=0; i < n; i++){
+            int index = in.nextInt(); 
+            types[index-1]++;
+        }
+        
+        for(int i=0; i < n; i++){
+            if(types[i] > maxFreq ){
+                maxFreq = types[i];
+                freqId=i+1;
+            }
+        }
+        System.out.println(freqId);
+    }
+}
