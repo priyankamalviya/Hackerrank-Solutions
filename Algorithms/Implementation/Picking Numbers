@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        Map<Integer, Integer> absCount = new HashMap<>();
+        for(int i=0; i < n; i++){
+            int val = in.nextInt();
+            Integer count = absCount.get(val) == null ? 0 : absCount.get(val);
+            absCount.put(val, ++count);
+        }
+
+        int globalMax = 2;
+
+        for(Integer i : absCount.keySet()) {
+            Integer thisNum = absCount.get(i);
+            Integer nextNum = absCount.get(i+1);
+            int localMax = (thisNum == null ? 0 : thisNum) + (nextNum == null? 0 : nextNum);
+            if(localMax > globalMax) {
+                globalMax = localMax;
+            }
+        }
+
+         System.out.println(globalMax);
+    }
+}
