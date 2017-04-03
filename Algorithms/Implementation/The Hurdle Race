@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int k = in.nextInt();
+        int[] height = new int[n];
+        int[] nheight = new int[n];
+
+        for(int height_i=0; height_i < n; height_i++){
+            height[height_i] = in.nextInt();
+        }
+        int temp; 
+        int maxdiff=0;
+        //arrange in descending order
+            for (int i = 0; i < n; i++) 
+        {
+            for (int j = i + 1; j < n; j++) 
+            {
+                if (height[i] < height[j]) 
+                {
+                    temp = height[i];
+                   height[i] = height[j];
+                    height[j] = temp;
+                }
+            }
+        }
+        
+        
+            
+            if(k>height[0])
+                {
+                System.out.print(0);
+                
+            } 
+        if(k<height[0])
+            {
+            maxdiff=height[0]-k;
+            System.out.print(maxdiff);
+        }
+                 
+    }
+}
+
