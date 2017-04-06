@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+    public static void main(String [] args) {
+        /* Create function: p_inverse */
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt();
+        int [] inverse = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            int px = scan.nextInt();
+            inverse[px] = i;
+        }
+        scan.close();
+        
+        /* Calculate and print each y */
+        for (int i = 1; i <= n; i++) {
+            int y = inverse[inverse[i]];
+            System.out.println(y);
+        }
+    }
+}
+
