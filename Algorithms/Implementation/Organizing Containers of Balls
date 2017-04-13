@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int q = in.nextInt();
+        for(int a0 = 0; a0 < q; a0++){
+            int n = in.nextInt();
+            int[] a = new int[n];
+            int[] b = new int[n];
+            for(int i=0; i<n; i++)
+            {
+                for(int j=0; j<n; j++)
+                {
+                    int rowVal = in.nextInt();
+                    a[i] += rowVal;
+                    b[j] += rowVal;
+                }
+            }
+            String result = "Possible";
+            for(int i=0;i<n;i++)
+            {
+                int j=0;
+                for(j=i;j<n;j++)
+                {
+                    if(a[i] == b[j])
+                    {
+                        int temp = b[j];
+                        b[j] = b[i];
+                        b[i] = temp;
+                        break;
+                    }
+                }
+                if(j==n)
+                {
+                    result = "Impossible";
+                    break;
+                }
+            }
+            System.out.println(result);
+        }
+    }
+}
+
