@@ -1,0 +1,11 @@
+
+n = int(raw_input())
+#define a dictionary
+mydict = {}
+#iterate through the n and accept name and marks
+for line in range(n):
+    name = raw_input().split(" ")
+    marks = map(float, name[1:])
+    mydict[name[0]] = sum(marks) / float(len(marks))
+
+print "%.2f" % round(mydict[raw_input()],2)
