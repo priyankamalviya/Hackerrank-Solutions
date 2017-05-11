@@ -1,0 +1,20 @@
+# Given: immutable string(tuple), position where a character needs to be inserted and the character to be inserted
+# Since tuple is immutable, it cannot be modified, but a list can be modified.
+
+def mutate_string(string, position, character):
+# Convert string into a list DS
+    l=list(string)
+# insert character in given position of list
+    l[position] = character
+# use .join to convert it back to string
+    string = ''.join(l)
+    return string
+    
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+    
+    
+    
