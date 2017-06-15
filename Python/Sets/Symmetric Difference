@@ -1,0 +1,7 @@
+input()
+val1=set(map(int,input().split()))
+input()
+val2=set(map(int,input().split()))
+result=val1.symmetric_difference(val2)
+for i in sorted(list(result)):
+    print(i)
