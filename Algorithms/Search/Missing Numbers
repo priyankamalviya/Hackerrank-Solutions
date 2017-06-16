@@ -1,0 +1,16 @@
+n=int(input().strip())
+map1=[int(x) for x in input().strip().split(' ')]
+m=int(input().strip())
+map2=[int(x) for x in input().strip().split(' ')]
+dict={}
+for i in map2:
+    if i not in dict:
+        dict[i]=map2.count(i)
+for i in map1:
+    dict[i]=dict[i]-1
+temp=[]
+for i in dict:
+    if dict[i]:
+        temp.append(i)
+temp.sort()
+print(' '.join(map(str,temp)))
