@@ -1,0 +1,5 @@
+value = input()
+dist = set()
+for i in range(int(value)):
+    dist.add(input())
+print(len(dist))
