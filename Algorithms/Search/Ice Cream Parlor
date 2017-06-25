@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+       public static void main(String[] args) {
+
+    Scanner sc=new Scanner(System.in);
+    int t=sc.nextInt();
+    for(int itr=0;itr<t;itr++)
+        {
+
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        int arr[]=new int[10000];
+        int flag=0;
+
+        for(int i=0; i<n ;i++)
+            {
+            int j=sc.nextInt();
+
+            if(arr[j]==0)
+            {
+                arr[j]=i+1;
+            }
+
+            if(m>j && arr[m-j]!=(i+1) && arr[m-j]>0 && flag==0) //arr[m-j]!=(i+1) checks that it does not take the same index                                                                       both the time
+                {
+                flag=1;
+                    System.out.println(arr[m-j]+" "+(i+1));
+            }
+
+        }
+
+       }
+
+    }
+}
