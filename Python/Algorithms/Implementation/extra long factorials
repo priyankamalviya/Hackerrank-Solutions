@@ -1,0 +1,15 @@
+# This code will hold true for any size of the factorial - beauty of Python!
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+
+def fact(n):
+    if(n==1):
+        return 1
+    prod=n*fact(n-1)
+    return prod
+
+print(fact(n))
