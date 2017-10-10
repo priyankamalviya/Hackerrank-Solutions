@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+
+n=int(input().strip())
+a=[int(i) for i in input().strip().split()]
+max=0
+for i in a:
+    temp=a.count(i)
+    d=a.count(i-1)
+    temp=temp+d
+    if temp > max:
+        max=temp
+print(max)
