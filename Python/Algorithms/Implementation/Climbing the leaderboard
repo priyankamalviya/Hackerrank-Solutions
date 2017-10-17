@@ -1,0 +1,17 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+scores = map(int,input().strip().split(' '))
+m = int(input().strip())
+alice = map(int,input().strip().split(' '))
+
+leaderboard = sorted(set(scores), reverse = True)
+l = len(leaderboard)
+
+for alice_score in alice:
+    while (l > 0) and (alice_score >= leaderboard[l-1]):
+        l -= 1
+    print (l+1)
