@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+def grow(cycles):
+    if cycles == 0:
+        return 1
+    if cycles % 2 == 0:
+        return 2 **((cycles/2) + 1) - 1
+    else:
+        return 2 **((cycles+3) /2) - 2
+
+for i in range(int(input().strip())):
+    print(int(grow(int(input().strip()))))
+
