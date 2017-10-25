@@ -1,0 +1,7 @@
+i,j,k = [int(x) for x in input().split()]
+count = 0
+for x in range(i,j+1):
+    #x[::-1] reverses x. list[<start>:<stop>:<step>]. So, when you do x[::-1] , it starts from the end, towards the first, taking each element. So it reverses x. This is applicable for lists/tuples as well.
+    if (x - int(str(x)[::-1])) % k == 0:
+        count += 1
+print(count)
