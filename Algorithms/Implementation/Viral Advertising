@@ -1,0 +1,4 @@
+n = [2]
+for i in range(int(input())-1):
+    n.append(int(3*n[i]/2))
+print(sum(n))
