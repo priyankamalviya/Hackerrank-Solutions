@@ -1,0 +1,6 @@
+#!/bin/python3
+
+t = int(input().strip())
+for _ in range(t):
+    N,M,S = list(map(int, input().strip().split()))
+    print(((S - 1 + M - 1) % N) + 1)
