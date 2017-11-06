@@ -1,0 +1,13 @@
+#!/bin/python
+
+import sys
+
+
+s = input().strip()
+t = input().strip()
+k = int(input().strip())
+for remaining in reversed(range(1, k + 1)):
+    if s == t[:len(s)] and len(t) - len(s) == remaining or len(s) == 0:
+        break
+    s = s[:-1]
+print( "Yes" if len(t) - len(s) <= remaining else "No")
