@@ -1,0 +1,17 @@
+n = int(input())
+arr = sorted(list(map(int,input().split())))
+s = sorted(list(set(arr)))
+l = len(arr)
+m = k = 0
+mx = 1
+for e in s:
+    for i in range(m,l):
+        k += 1
+        if arr[i] != e:
+            m = i
+            k -= 1
+            break
+    if k > mx:
+        mx = k
+    k = 0
+print(l - mx)
