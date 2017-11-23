@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+
+t = int(input().strip())
+for _ in range(t):
+    b,w = map(int, input().strip().split(' '))
+    x,y,z = map(int, input().strip().split(' '))
+    if x + z < y:
+        print (x * b + w * (x + z))
+    elif y + z < x:
+        print (y * w + b * (y + z))
+    else:
+        print (x * b + y * w)
