@@ -1,0 +1,17 @@
+n = int(input())
+result = []
+ar = []
+for i in range(n):
+    s = int(input())
+    a = int(input())
+    b = int(input())
+    ar = [a for i in range(s - 1)]       
+    result.append(sum(ar))
+    for i in range(s - 1):
+        ar[i] = b
+        result.append(sum(ar))
+    result = list(set(result))
+    result.sort()
+    print(" ".join(map(str,result)))
+    result = []
+    ar = []
