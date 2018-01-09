@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+
+def strangeCode(t):
+    # Complete this function
+    rem = 3
+    while t > rem:
+        t = t-rem
+        rem *= 2
+
+    return (rem-t+1)
+
+if __name__ == "__main__":
+    t = int(input().strip())
+    result = strangeCode(t)
+    print(result)
+
