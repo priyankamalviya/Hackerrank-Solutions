@@ -1,5 +1,7 @@
 #!/bin/python3
 
+### uses a dictionary to compare and find minmum distance between 2 equal elements
+
 import sys
 import math
 
