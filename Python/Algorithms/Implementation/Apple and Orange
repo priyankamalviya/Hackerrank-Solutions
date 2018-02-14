@@ -1,3 +1,24 @@
+# Given the value of d for m apples and n oranges, can you determine how many apples and oranges will fall 
+# on Sam's house (i.e., in the inclusive range [s,t])? Print the number of apples that fall on Sam's house as your first line of output, then print the number of oranges that fall on Sam's house as your second line of output.
+
+# Input Format
+
+# The first line contains two space-separated integers denoting the respective values of s and t .
+# The second line contains two space-separated integers denoting the respective values of a and b.
+# The third line contains two space-separated integers denoting the respective values of m and n.
+# The fourth line contains space-separated integers denoting the respective distances that each apple falls from point a.
+# The fifth line contains space-separated integers denoting the respective distances that each orange falls from point b .
+
+# Constraints
+
+# Output Format
+
+# Print two lines of output:
+
+  #  On the first line, print the number of apples that fall on Sam's house.
+  # On the second line, print the number of oranges that fall on Sam's house.
+
+
 #!/bin/python3
 
 import sys
