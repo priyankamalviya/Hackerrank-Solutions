@@ -1,3 +1,6 @@
+# Complete the function kangaroo which takes starting location and speed of both kangaroos as input, and return Yes or No appropriately. 
+# Can you determine if the kangaroos will ever land at the same location at the same time? 
+# The two kangaroos must land at the same location after making the same number of jumps.
 #!/bin/python3
 
 import sys
